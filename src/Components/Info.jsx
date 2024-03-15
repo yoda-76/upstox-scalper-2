@@ -12,7 +12,7 @@ export default function Info() {
         try {
             ["get-positions","get-tradebook","get-orderbook","get-funds"].map(async i=>{
                 try {
-                    const response = await fetch(`http://localhost:4000/console/${i}`, {
+                    const response = await fetch(`https://projectsbyyoda.xyz/console/${i}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
