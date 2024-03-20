@@ -51,7 +51,7 @@ export default function Login() {
     return (
         <div className='bg-slate-800 h-screen flex flex-col justify-center items-center text-white'>
             
-            <div className='bg-slate-700 h-1/3 w-1/5 flex flex-col justify-between py-5'>
+            <div className='bg-slate-700 h-1/3 w-[25%] flex flex-col justify-between py-5'>
                 <h1 className=' text-white text-4xl font-semibold text-center bg-purple-600 p-2'>Login</h1>
                 <form className=' flex flex-col gap-1 justify-center items-center' onSubmit={handleSubmit}>
                     <div className=' w-[100%] items-center flex justify-between'>
