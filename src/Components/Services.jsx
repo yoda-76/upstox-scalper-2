@@ -13,7 +13,7 @@ export default function Services() {
         {imgUrl:"", heading:"Trading Terminal",exp:"Get all your trades, orders, positions and holdings with multiple watchlist"}
     ]
   return (
-    <div className=' flex  flex-col h-[60vh] w-[90%] '>
+    <div className=' flex mb-20 flex-col h-[60vh] w-[90%] '>
         <div className='text-white my-4 mt-7 text-4xl font-bold '>Services</div>
         <div className='flex   flex-wrap justify-between '>
             {servicesList.map((s,i)=>{

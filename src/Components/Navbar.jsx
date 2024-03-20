@@ -6,10 +6,9 @@ export default function Navbar() {
         <div className='text-purple-600 font-bold text-5xl' >XYZ...</div>
         <div className='text-purple-600 font-bold  w-3/4  flex justify-center  align-middle'>
             <ul className='flex justify-evenly text-2xl w-[100%]  p-3'>
-                <li>Services</li>
-                <li>Features</li>
-                <li>Pricing</li>
-                <li>FAQs</li>
+                <li><a >Services</a></li>
+                <li><a>FAQs</a></li>
+                <li><a href='/dashboard'>Dashboard</a></li>
                 <li>
                     <button onClick={()=>{window.location.href = "/login";}} className='mx-2 px-3 py-1 bg-purple-600 text-white rounded'>Login</button>
                     <button onClick={()=>{window.location.href = "/register";}} className='mx-2 px-3 py-1 bg-purple-600 text-white rounded'>Signup</button>
