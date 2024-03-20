@@ -49,46 +49,43 @@ export default function Login() {
     
 
     return (
-        <div className='bg-gray-800 h-screen flex flex-col justify-center items-center text-white'>
-            <button className='p-3 m-3 bg-sky-600 text-white' onClick={()=>{
-                            window.location.href = "/docs";
+        <div className='bg-slate-800 h-screen flex flex-col justify-center items-center text-white'>
+            
+            <div className='bg-slate-700 h-1/3 w-1/5 flex flex-col justify-between py-5'>
+                <h1 className=' text-white text-4xl font-semibold text-center bg-purple-600 p-2'>Login</h1>
+                <form className=' flex flex-col gap-1 justify-center items-center' onSubmit={handleSubmit}>
+                    <div className=' w-[100%] items-center flex justify-between'>
+                        <label htmlFor='email' className='ml-2 text-white text-2xl'>Email:</label>
+                        <input
+                            type='email'
+                            name='email'
+                            value={form.email}
+                            onChange={handleChange}
+                            className=' bg-gray-200 text-black px-2 py-1 rounded-md  mr-2 '
+                        />
+                    </div>
+                    <div className='w-[100%] items-center flex justify-between'>
+                        <label htmlFor='password'  className=' ml-2 text-white text-2xl'>Password:</label>
+                        <input
+                            type='password'
+                            name='password'
+                            value={form.password}
+                            onChange={handleChange}
+                            className=' bg-gray-200  text-black px-2 py-1 rounded-md mr-2'
+                        />
+                    </div>
+                    <button type="submit" className='w-6/12 bg-purple-600  text-white  hover:shadow-sm hover:shadow-white font-bold py-2 rounded-md mt-2'>
+                        Submit
+                    </button>
+                </form>
 
-            }}>Docs</button>
-            <div className='bg-sky-600 w-min h-min p-10'>
-            <h1 className='text-white text-3xl text-center'>Login</h1>
-            <form className='bg-black flex flex-col gap-1 justify-center items-center' onSubmit={handleSubmit}>
-                <div className='m-2 flex items-center'>
-                    <label htmlFor='email' className='text-white'>Email:</label>
-                    <input
-                        type='email'
-                        name='email'
-                        value={form.email}
-                        onChange={handleChange}
-                        className='flex-grow bg-gray-200 text-black px-2 py-1 rounded-md ml-2'
-                    />
-                </div>
-                <div className='flex m-2 justify-between'>
-                    <label htmlFor='password'  className='text-white'>Password:</label>
-                    <input
-                        type='password'
-                        name='password'
-                        value={form.password}
-                        onChange={handleChange}
-                        className='bg-gray-200 text-black px-2 py-1 rounded-md'
-                    />
-                </div>
-                <button type="submit" className='w-6/12 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-md'>
-                    Submit
-                </button>
-            </form>
-
-        </div>
-        <div className='mt-4 flex items-center justify-around gap-3 	'>
-            <p className='text-gray-300'>New User?</p>
-                <Link to="/register" className='bg-blue-500 hover:bg-blue-600 text-white font-bold  px-4 rounded'>
-                    Register
-                </Link>
-        </div>
+            </div>
+            <div className='mt-4 flex items-center justify-around gap-3 	'>
+                <p className='text-gray-300'>New User?</p>
+                    <Link to="/register" className='bg-purple-600  text-white  hover:shadow-sm hover:shadow-white  font-bold  px-4 rounded'>
+                        Register
+                    </Link>
+            </div>
         </div>
     );
 }

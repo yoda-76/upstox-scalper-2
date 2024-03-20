@@ -54,35 +54,32 @@ export default function Dashboard() {
     
 
     return (
-        <div className='bg-gray-800 h-screen flex flex-col justify-between items-center text-white'>
-            <button className='p-3 m-3 bg-sky-600 text-white' onClick={()=>{
-                            window.location.href = "/docs";
-
-            }}>Docs</button>
-            <div className='bg-sky-600 w-min h-min p-10 mt-40'>
-            <h1 className='text-white text-3xl text-center'> Add Your upstox key and secret</h1>
-            <form className='bg-black flex flex-col gap-1 justify-center items-center' onSubmit={handleSubmit}>
-                <div className='m-2 flex items-center'>
-                    <label htmlFor='Key' className='text-white'>Key:</label>
+        <div className='bg-slate-800 h-screen flex flex-col justify-between items-center text-white'>
+            
+            <div className='mt-32  bg-slate-700 h-1/3 w-[35%] flex flex-col justify-between py-5'>
+            <h1 className= 'text-white text-4xl font-semibold text-center bg-purple-600 p-2'> Add Your upstox key and secret</h1>
+            <form className='flex flex-col gap-1 justify-center items-center' onSubmit={handleSubmit}>
+                <div className='w-[100%] items-center flex justify-between'>
+                    <label htmlFor='Key' className='ml-2 text-white text-2xl'>Key:</label>
                     <input
                         type='Key'
                         name='Key'
                         value={form.Key}
                         onChange={handleChange}
-                        className='flex-grow bg-gray-200 text-black px-2 py-1 rounded-md ml-2'
+                        className=' bg-gray-200 text-black px-2 py-1 rounded-md w-4/5  mr-2 '
                     />
                 </div>
-                <div className='flex m-2 justify-between'>
-                    <label htmlFor='secret'  className='text-white'>secret:</label>
+                <div className='w-[100%] items-center flex justify-between'>
+                    <label htmlFor='secret'  className='ml-2 text-white text-2xl'>secret:</label>
                     <input
                         type='secret'
                         name='secret'
                         value={form.secret}
                         onChange={handleChange}
-                        className='bg-gray-200 text-black px-2 py-1 rounded-md'
+                        className=' bg-gray-200 text-black px-2 py-1 rounded-md w-4/5 mr-2 '
                     />
                 </div>
-                <button type="submit" className='w-6/12 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-md'>
+                <button type="submit" className='w-6/12 bg-purple-600  text-white hover:bg-purple-700  hover:shadow-sm hover:shadow-white font-bold py-2 rounded-md mt-2'>
                     Submit
                 </button>
             </form>
@@ -90,10 +87,10 @@ export default function Dashboard() {
             </div>
 
             <div className='w-full flex justify-end  bg-black align-bottom'>
-                {isAccessTokenGenerated?<div className="text-center w-1/5 m-10 bg-green-500 text-white font-bold py-2 rounded-md">Generate Token</div>:<button onClick={generateTokenHandler} className="w-1/5 m-10 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-md">Generate Token</button>}
+                {isAccessTokenGenerated?<div className="text-center w-1/5 m-10 bg-green-500 text-white font-bold py-2 rounded-md">Generate Token</div>:<button onClick={generateTokenHandler} className="w-1/5 m-10 bg-purple-600  text-white  hover:shadow-sm hover:shadow-white hover:bg-purple-700 font-bold py-2 rounded-md">Generate Token</button>}
                 <button onClick={()=>{
                     window.location.href = "/tradingConsole";
-                }} className="w-1/5 m-10 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-md">Trade Now</button>
+                }} className="w-1/5 m-10 bg-purple-600  text-white  hover:shadow-sm hover:shadow-white hover:bg-purple-700 font-bold py-2 rounded-md">Trade Now</button>
 
             </div>
         
