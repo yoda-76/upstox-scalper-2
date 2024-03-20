@@ -50,6 +50,10 @@ export default function Login() {
 
     return (
         <div className='bg-gray-800 h-screen flex flex-col justify-center items-center text-white'>
+            <button className='p-3 m-3 bg-sky-600 text-white' onClick={()=>{
+                            window.location.href = "/docs";
+
+            }}>Docs</button>
             <div className='bg-sky-600 w-min h-min p-10'>
             <h1 className='text-white text-3xl text-center'>Login</h1>
             <form className='bg-black flex flex-col gap-1 justify-center items-center' onSubmit={handleSubmit}>

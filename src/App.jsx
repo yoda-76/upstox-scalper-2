@@ -6,6 +6,7 @@ import Register from './Pages/Register';
 import Dashboard from './Pages/Dashboard';
 import TradingConsole from './Pages/TradingConsole';
 import Docs from './Pages/Docs';
+import LandingPage from './Pages/LandingPage';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/register" element={<Register />} />
       <Route path="/tradingConsole" element={<TradingConsole />} />
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/docs" element={<Docs/>}/>
     </Routes>
   </Router>
