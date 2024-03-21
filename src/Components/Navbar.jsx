@@ -6,7 +6,7 @@ export default function Navbar() {
         <div className='text-purple-600 font-bold text-5xl' >XYZ...</div>
         <div className='text-purple-600 font-bold  w-3/4  flex justify-center  align-middle'>
             <ul className='flex justify-end text-xl w-[100%]  p-3'>
-                <li className='mx-2 px-3 py-1'><a href='/docs'>Docs</a></li>
+                <li className='mx-2 px-3 py-1'><a href='https://documenter.getpostman.com/view/27161625/2sA35A6jeK'>Docs</a></li>
                 <li className='mx-2 px-3 py-1'><a href='/dashboard'>Dashboard</a></li>
                 <li>
                     <button onClick={()=>{window.location.href = "/login";}} className='mx-2 px-2 py-1 bg-purple-600 text-xl text-white rounded'>Login</button>
