@@ -22,8 +22,8 @@ export default function Watchlist(props) {
     //             </li>`
     // }
   return (
-    <div>
-        <input  type='text'/>
+    <div className='flex flex-col '>
+        <span className='text-white text-2xl text-center font-semibold mb-1 bg-black'>Watchlist</span>
         <ul>
             {props.watchlist.map(i=>{
                 return <li className='text-white flex justify-around' key={i.key}><span>{i.symbol}</span><span>{i.ltp}</span></li>

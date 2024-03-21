@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import ColumnHeading from './ColumnHeading'
+import Orderbook from './Orderbook'
+import Funds from './Funds'
+import Tradebook from './Tradebook'
+import Positions from './Positions'
 
 export default function Info() {
     const [info,setInfo]=useState("positions")
@@ -51,7 +55,7 @@ export default function Info() {
     }
   return (
     <div>
-        <div className=' flex justify-around'>
+        <div className=' flex justify-around '>
             <ColumnHeading id="get-positions" onClick={changeHandler} text="Positions"/>
             <ColumnHeading id="get-orderbook" onClick={changeHandler} text="Order Book"/>
             <ColumnHeading id="get-tradebook" onClick={changeHandler} text="Trade Book"/>
@@ -59,10 +63,13 @@ export default function Info() {
 
         </div>
         <div>
-            {info==="positions"&&JSON.stringify(positions)}
-            {info==="tradebook"&&JSON.stringify(tradebook)}
-            {info==="orderbook"&&JSON.stringify(orderbook)}
-            {info==="funds"&&JSON.stringify(funds)}
+            {info==="positions"&&<Positions {...positions}/>}
+
+            {info==="tradebook"&&<Tradebook {...tradebook}/>}
+
+            {info==="orderbook"&&<Orderbook {...orderbook}/>}
+            {info==="funds"&&<Funds {...funds}/>}
+
         </div>
     </div>
   )

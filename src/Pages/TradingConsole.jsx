@@ -229,73 +229,72 @@ export default function TradingConsole() {
     }
 
   return (
-    <div className='bg-purple-900 h-screen  '>
-        <div  className=' h-[13%]  flex justify-around'>
-            <IndexCard ltp={niftyLTP} onClick={indexCardClickHandler} index="NIFTY"/>
-            <IndexCard ltp={finNiftyLTP} onClick={indexCardClickHandler} index="FINNIFTY"/>
-            <IndexCard ltp={bankNiftyLTP} onClick={indexCardClickHandler} index="BANKNIFTY"/>
+    <div className='bg-purple-900 h-screen '>
+        <div  className=' h-[13%] w-[100%]  flex justify-around'>
+            <IndexCard ltp={niftyLTP} indexState={index} onClick={indexCardClickHandler} index="NIFTY"/>
+            <IndexCard ltp={finNiftyLTP} indexState={index} onClick={indexCardClickHandler} index="FINNIFTY"/>
+            <IndexCard ltp={bankNiftyLTP} indexState={index} onClick={indexCardClickHandler} index="BANKNIFTY"/>
             {/* <IndexCard onClick={indexCardClickHandler} index="SENSEX"/> */}
         </div>
-        <div className=' flex  h-[86%]  '>
+        <div className=' flex  h-[86%] w-[100%] '>
             <div className='bg-black opacity-60 w-[20%] h-full m-1'>
                 <Watchlist watchlist={watchlist}/>
             </div>
-            <div className=' w-[79%]  h-full' >
-                <div className=' flex h-[44%] m-1'>
-                    <div className='bg-black opacity-60 h-full w-[89%] mr-1 flex-row justify-around text-white '>
+            <div className=' w-[79%] h-full' >
+                <div className=' flex h-[44%] m-1 w-[100%]'>
+                    <div className='bg-black opacity-60 h-full w-[100%] mr-1 flex flex-col justify-around   text-white '>
                         <div className='flex justify-around'>
                         {expiryList!=[]&&<StrikeInput strikeList={strikeList} onChange={callStrikeChangeHandler}/>}
                         <ExpiryInput expiryList={expiryList} onChange={expiryChangeHandler}/>
                         {expiryList!=[]&&<StrikeInput strikeList={strikeList} onChange={putStrikeChangeHandler}/>}
                         </div>
-                    {/* <div className='text-white h-3'>error</div> */}
-                    <div className='flex justify-around'>
-                        <div>
-                            <div className='flex'>
-                                <div>Symbol: </div>
-                                <div>{callKey.symbol}</div>
-                                <button onClick={()=>{
-                                    addToWatchlist(callKey)
-                                }} className='mx-1'>+</button>
+                        {/* <div className='text-white h-3'>error</div> */}
+                        <div className='flex justify-around'>
+                            <div>
+                                <div className='flex'>
+                                    <div>Symbol: </div>
+                                    <div>{callKey.symbol}</div>
+                                    <button onClick={()=>{
+                                        addToWatchlist(callKey)
+                                    }} className='mx-1'>+</button>
+                                </div>
+                                <div className='flex'>
+                                    <div>LTP: </div>
+                                    <div>{callLTP}</div>
+                                </div>
                             </div>
-                            <div className='flex'>
-                                <div>LTP: </div>
-                                <div>{callLTP}</div>
+                            <div>
+                                <div className='flex'>
+                                    <div>Symbol: </div>
+                                    <div>{putKey.symbol}</div>
+                                    <button onClick={()=>{
+                                        addToWatchlist(putKey)
+                                    }} className='mx-1'>+</button>
+                                </div>
+                                <div className='flex'>
+                                    <div>LTP: </div>
+                                    <div>{putLTP}</div>
+                                </div>
                             </div>
+
                         </div>
-                        <div>
+
+
+                        <div className='flex justify-around'>
                             <div className='flex'>
-                                <div>Symbol: </div>
-                                <div>{putKey.symbol}</div>
-                                <button onClick={()=>{
-                                    addToWatchlist(putKey)
-                                }} className='mx-1'>+</button>
+                                <Button onClick={placeOrder} id="buy-call" text= "Buy Call"/>
+                                <Button onClick={placeOrder} id="sell-call" text= "Sell Call"/>
                             </div>
+                            <input onChange={quantityChangeHandler} value={quantity} className='text-black' type="number"/>
                             <div className='flex'>
-                                <div>LTP: </div>
-                                <div>{putLTP}</div>
+                                <Button onClick={placeOrder} id="buy-put" text= "Buy Put"/>
+                                <Button onClick={placeOrder} id="sell-put" text= "Sell Put"/>
                             </div>
                         </div>
 
                     </div>
-
-
-                    <div className='flex justify-around'>
-                        <div className='flex'>
-                            <Button onClick={placeOrder} id="buy-call" text= "Buy Call"/>
-                            <Button onClick={placeOrder} id="sell-call" text= "Sell Call"/>
-                        </div>
-                        <input onChange={quantityChangeHandler} value={quantity} className='text-black' type="number"/>
-                        <div className='flex'>
-                            <Button onClick={placeOrder} id="buy-put" text= "Buy Put"/>
-                            <Button onClick={placeOrder} id="sell-put" text= "Sell Put"/>
-                        </div>
-                    </div>
-
-                    </div>
-                    <div className='bg-black opacity-60 h-full w-[10%] ml-2 text-white'>side bar</div>
                 </div>
-                <div className='bg-black opacity-60 h-[10%] m-1'></div>
+                <div className='bg-black opacity-60 h-[10%] m-1 w-[100%]'></div>
                 <div className=' h-[44%] m-1'>
                     <Info/>
                 </div>
