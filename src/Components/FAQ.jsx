@@ -19,7 +19,7 @@ export default function FAQ() {
         <div className='text-white my-4 mt-7 text-4xl font-bold '>Frequently Asked Questions</div>
         <div className='flex flex-col  flex-wrap justify-between '>
             {FaqList.map((s,i)=>{
-                return <FaqCard key={i} {...s} />
+                return <div><FaqCard key={i} {...s} />{i!=8&&<div className='h-[1px] w-[100%] my-6 bg-white'></div>}</div>
             })}
         </div>
     </div>

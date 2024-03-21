@@ -5,12 +5,12 @@ export default function Navbar() {
     <div className='flex justify-between bg-black  w-[100%] h-20 p-2 '>
         <div className='text-purple-600 font-bold text-5xl' >XYZ...</div>
         <div className='text-purple-600 font-bold  w-3/4  flex justify-center  align-middle'>
-            <ul className='flex justify-end text-2xl w-[100%]  p-3'>
+            <ul className='flex justify-end text-xl w-[100%]  p-3'>
                 <li className='mx-2 px-3 py-1'><a href='/docs'>Docs</a></li>
                 <li className='mx-2 px-3 py-1'><a href='/dashboard'>Dashboard</a></li>
                 <li>
-                    <button onClick={()=>{window.location.href = "/login";}} className='mx-2 px-3 py-1 bg-purple-600 text-white rounded'>Login</button>
-                    <button onClick={()=>{window.location.href = "/register";}} className='mx-2 px-3 py-1 bg-purple-600 text-white rounded'>Signup</button>
+                    <button onClick={()=>{window.location.href = "/login";}} className='mx-2 px-2 py-1 bg-purple-600 text-xl text-white rounded'>Login</button>
+                    <button onClick={()=>{window.location.href = "/register";}} className='mx-2 px-2 py-1 bg-purple-600 text-xl text-white rounded'>Signup</button>
 
                 </li>
 
