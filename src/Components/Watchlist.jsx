@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Watchlist(props) {
-    console.log(props.watchlist)
+    // console.log(props.watchlist)
 
     // function findMatches(wordToMatch, cities){
     //     // 

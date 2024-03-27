@@ -5,12 +5,17 @@ import Funds from './Funds'
 import Tradebook from './Tradebook'
 import Positions from './Positions'
 
-export default function Info() {
+export default function Info(props) {
+
+    useEffect(()=>{},[props.rr])
+
+    
     const [info,setInfo]=useState("positions")
     const [positions, setPositions]=useState()
     const [orderbook, setOrderbook]= useState()
     const [tradebook, setTradebook]= useState()
     const [funds, setFundes]=useState()
+    
 
     useEffect(()=>{
         try {
@@ -27,12 +32,19 @@ export default function Info() {
                     
                     const data = await response.json();
                     if(i==="get-positions"){
+                        console.log(data.data)
                         setPositions(data.data)
                     }else if(i==="get-tradebook"){
+                        console.log(data.data)
+
                         setTradebook(data.data)
                     }else if(i==="get-orderbook"){
+                        console.log(data.data)
+
                         setOrderbook(data.data)
                     }else if(i==="get-funds"){
+                        console.log(data.data)
+
                         setFundes(data.data)
                     }
         
@@ -45,7 +57,7 @@ export default function Info() {
         } catch (error) {
             console.error('Error:', error.message);
         }
-    },[])
+    },[props.rr])
     
 
 

@@ -12,7 +12,7 @@ export default function Dashboard() {
         // console.log(form)
         const { name, value } = e.target;
         setForm(prevState => ({
-            ...prevState,
+            ...prevState,   
             [name]: value
         }));
     };

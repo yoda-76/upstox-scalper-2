@@ -28,6 +28,7 @@ export default function TradingConsole() {
     const [putLTP,setPutLTP]=useState("")
     const [quantity,setQuantity]=useState(0)
     const [watchlist, setWatchlist]=useState([])
+    const [rerenderInfo, setRerenderInfo]=useState(1)
 
     // const [callStrikeList, setCallStrikeList]=useState("0")
     // const [putStrikeList, setPutStrikeList]=useState("0")
@@ -65,10 +66,10 @@ export default function TradingConsole() {
     // console.log(getStrikeList("NIFTY"))
 
 
-    useEffect(()=>{
-        console.log("call key: ",callKey, callLTP)
-        console.log("put key :", putKey, putLTP)
-    })
+    // useEffect(()=>{
+    //     console.log("call key: ",callKey, callLTP)
+    //     console.log("put key :", putKey, putLTP)
+    // })
     
 
     
@@ -98,13 +99,13 @@ export default function TradingConsole() {
     function setLTP(){
         // console.log("ltpset",callLTP, putLTP)
         for(const key in feed){
-            console.log(callKey.key,feed[callKey.key])
+            // console.log(callKey.key,feed[callKey.key])
             if(key==callKey.key && feed[key].cp){
-                console.log(callKey.symbol, feed[key].cp)
+                // console.log(callKey.symbol, feed[key].cp)
                 setCallLTP(feed[key].cp)
             }
             if(key==putKey.key){ 
-                console.log(putKey.symbol, feed[key].cp)
+                // console.log(putKey.symbol, feed[key].cp)
                 setPutLTP(feed[key].cp)}
                 if(feed["NSE_INDEX|Nifty 50"]&&feed["NSE_INDEX|Nifty 50"].ltp)setNiftyLTP(feed["NSE_INDEX|Nifty 50"].ltp)
                 if(feed["NSE_INDEX|Nifty Bank"]&&feed["NSE_INDEX|Nifty Bank"].ltp)setBankNiftyLTP(feed["NSE_INDEX|Nifty Bank"].ltp)
@@ -141,16 +142,16 @@ export default function TradingConsole() {
         // socket.send(JSON.stringify(initialData));
       });
       socket.on('message',(message) => {
-        console.log(message)
+        // console.log(message)
         setFeed(JSON.parse(message))
       });
   
       socket.on('disconnect',() => {
-        console.log("WebSocket disconnected");
+        // console.log("WebSocket disconnected");
       });
   
       return () => {
-        console.log("useEffect has been deprecated");
+        // console.log("useEffect has been deprecated");
         socket.close();
       };
     }, []);
@@ -162,11 +163,11 @@ export default function TradingConsole() {
 
     function indexCardClickHandler(name){
         setIndex(name)
-        console.log(index)
+        // console.log(index)
     }
 
     function expiryChangeHandler(e){
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setExpiry(e.target.value)
     }
     function callStrikeChangeHandler(e){
@@ -205,6 +206,8 @@ export default function TradingConsole() {
             
             const data = await response.json();
             console.log("data: ",data)
+            setRerenderInfo(prev=> !prev)
+            
 
 
         } catch (error) {
@@ -296,7 +299,7 @@ export default function TradingConsole() {
                 </div>
                 <div className='bg-black opacity-60 h-[10%] m-1 w-[100%]'></div>
                 <div className=' h-[44%] m-1'>
-                    <Info/>
+                    <Info rr={rerenderInfo}/>
                 </div>
             </div>
         </div>

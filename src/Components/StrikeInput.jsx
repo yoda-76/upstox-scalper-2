@@ -5,6 +5,7 @@ export default function StrikeInput(props) {
   // const p=e=>{
     // console.log(props.strikeList)
   // }
+  // console.log("abc")
   return (
     <div>
       <label htmlFor="strike-dropdown">Call Strike:</label>
