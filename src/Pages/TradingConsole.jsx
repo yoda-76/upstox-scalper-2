@@ -135,7 +135,7 @@ export default function TradingConsole() {
     },[feed])
 
     useEffect(() => {
-      const serverUrl =`https://projectsbyyoda.xyz?email=${email}`; 
+      const serverUrl =`http://localhost:8000/?email=${email}`; 
       const socket = io(serverUrl);
       socket.on('connect',() => {
         console.log("WebSocket connected test");
@@ -192,7 +192,7 @@ export default function TradingConsole() {
         }
         console.log({instrument_token, quantity, transaction_type})
         try {
-            const response = await fetch(`https://projectsbyyoda.xyz/console/place-order`, {
+            const response = await fetch(`http://localhost:8000/console/place-order`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

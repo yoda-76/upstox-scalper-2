@@ -20,7 +20,7 @@ export default function Dashboard() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("https://projectsbyyoda.xyz/profile/saveKeyAndSecret", {
+            const response = await fetch("http://localhost:8000/profile/saveKeyAndSecret", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export default function Dashboard() {
     };
 
     const generateTokenHandler =()=>{
-        const url=`https://api.upstox.com/v2/login/authorization/dialog?response_type=code&client_id=${key}&redirect_uri=https://projectsbyyoda.xyz/auth&state=${email}`
+        const url=`https://api.upstox.com/v2/login/authorization/dialog?response_type=code&client_id=${key}&redirect_uri=http://localhost:8000/auth&state=${email}`
         window.open(url, '_blank');
         // console.log(email, key
         // )

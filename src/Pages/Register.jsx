@@ -18,7 +18,7 @@ export default function Register() {
         console.log(form); // Log the form values
     
         try {
-            const response = await fetch("https://projectsbyyoda.xyz/profile/signup", {
+            const response = await fetch("http://localhost:8000/profile/signup", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

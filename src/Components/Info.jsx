@@ -21,7 +21,7 @@ export default function Info(props) {
         try {
             ["get-positions","get-tradebook","get-orderbook","get-funds"].map(async i=>{
                 try {
-                    const response = await fetch(`https://projectsbyyoda.xyz/console/${i}`, {
+                    const response = await fetch(`http://localhost:8000/console/${i}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

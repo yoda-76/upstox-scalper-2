@@ -18,7 +18,7 @@ export default function Login() {
         e.preventDefault();
         console.log(form)
         try {
-            const response = await fetch("https://projectsbyyoda.xyz/profile/login", {
+            const response = await fetch("http://localhost:8000/profile/login", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
